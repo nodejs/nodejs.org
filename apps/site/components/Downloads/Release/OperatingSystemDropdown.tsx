@@ -4,7 +4,7 @@ import Select from '@node-core/ui-components/Common/Select';
 import { useTranslations } from 'next-intl';
 import { use, useEffect, useMemo } from 'react';
 
-import useClientContext from '#site/hooks/useClientContext';
+import useDetectOS from '#site/hooks/useDetectOS';
 import { ReleaseContext } from '#site/providers/releaseProvider';
 import { nextItem, OPERATING_SYSTEMS, parseCompat } from '#site/util/download';
 
@@ -14,7 +14,7 @@ import type { FC } from 'react';
 type OperatingSystemDropdownProps = { exclude?: Array<OperatingSystem> };
 
 const OperatingSystemDropdown: FC<OperatingSystemDropdownProps> = () => {
-  const { os } = useClientContext();
+  const { os } = useDetectOS();
   const release = use(ReleaseContext);
   const t = useTranslations();
 
@@ -22,7 +22,7 @@ const OperatingSystemDropdown: FC<OperatingSystemDropdownProps> = () => {
     if (os !== 'LOADING') {
       release.setOS(os);
     }
-    // Reacts on Client Context change of OS
+    // Reacts on the detection of the OS
     // Only this Hook is allowed to bypass the `setOS` from above
     // As this Hook is what defined the initial OS state
     // eslint-disable-next-line @eslint-react/exhaustive-deps

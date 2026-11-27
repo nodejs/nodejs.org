@@ -3,43 +3,33 @@
 import { ArrowUpRightIcon } from '@heroicons/react/24/outline';
 import BannerContainer from '@node-core/ui-components/Common/Banner';
 import { useTranslations } from 'next-intl';
-import { useEffect, useState } from 'react';
 
 import Link from '#site/components/Link';
-import { siteConfig } from '#site/next.json.mjs';
+import useLocalStorage from '#site/hooks/useLocalStorage';
 import { dateIsBetween } from '#site/util/date';
 
+import type { WebsiteBanner } from '#site/types';
 import type { FC } from 'react';
 
 const STORAGE_KEY = 'banner-dismissal';
 
-const WebsiteBanner: FC<{ section: string }> = ({ section }) => {
-  const banner = siteConfig.websiteBanners[section];
+const Banner: FC<{ banner: WebsiteBanner }> = ({ banner }) => {
   const t = useTranslations();
 
-  const [open, setOpen] = useState(false);
+  const [dismissed, setDismissed] = useLocalStorage(STORAGE_KEY);
 
-  useEffect(() => {
-    if (banner) {
-      // eslint-disable-next-line @eslint-react/set-state-in-effect
-      setOpen(localStorage.getItem(STORAGE_KEY) !== banner.text);
-    }
-  }, [banner]);
+  // The banner stays closed until the storage tells whether it was dismissed
+  const open = dismissed !== undefined && dismissed !== banner.text;
 
-  if (banner && open && dateIsBetween(banner.startDate, banner.endDate)) {
+  if (open && dateIsBetween(banner.startDate, banner.endDate)) {
     const bannerType = banner.type || 'default';
-
-    const onClose = () => {
-      localStorage.setItem(STORAGE_KEY, banner.text);
-      setOpen(false);
-    };
 
     return (
       <BannerContainer
         type={banner.type}
         aria-label={t(`components.banner.${bannerType}`)}
         closeButtonAriaLabel={t('components.banner.close')}
-        onClose={onClose}
+        onClose={() => setDismissed(banner.text)}
       >
         {banner.link ? (
           <Link href={banner.link}>{banner.text}</Link>
@@ -54,4 +44,4 @@ const WebsiteBanner: FC<{ section: string }> = ({ section }) => {
   return null;
 };
 
-export default WebsiteBanner;
+export default Banner;

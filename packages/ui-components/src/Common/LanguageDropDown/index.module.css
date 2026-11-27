@@ -36,6 +36,7 @@
 
 .dropDownItem {
   @apply data-[highlighted]:bg-brand-600
+    block
     cursor-pointer
     px-2.5
     py-1.5

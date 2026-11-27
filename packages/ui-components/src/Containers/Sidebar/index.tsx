@@ -1,24 +1,11 @@
-import WithNoScriptSelect from '#ui/Common/Select/NoScriptSelect';
+import SidebarCollapsible from '#ui/Containers/Sidebar/SidebarCollapsible';
 import SidebarGroup from '#ui/Containers/Sidebar/SidebarGroup';
+import { findActiveItem } from '#ui/Containers/Sidebar/utils';
 
-import type { FormattedMessage, LinkLike } from '#ui/types';
+import type { LinkLike } from '#ui/types';
 import type { ComponentProps, FC, PropsWithChildren, RefObject } from 'react';
 
 import styles from './index.module.css';
-
-type SidebarItemType = {
-  label: FormattedMessage;
-  link: string;
-  items?: Array<SidebarItemType>;
-};
-
-const flattenItems = (
-  items: Array<SidebarItemType>
-): Array<SidebarItemType> => {
-  return items.flatMap((item: SidebarItemType) =>
-    item.items && item.items.length ? flattenItems(item.items) : [item]
-  );
-};
 
 type SidebarProps = {
   groups: Array<
@@ -26,59 +13,49 @@ type SidebarProps = {
   >;
   pathname?: string;
   title: string;
-  onSelect: (value: string) => void;
   as?: LinkLike;
   placeholder?: string;
-  ref: RefObject<HTMLElement | null>;
+  ref?: RefObject<HTMLElement | null>;
 };
 
 const SideBar: FC<PropsWithChildren<SidebarProps>> = ({
   groups,
   pathname,
   title,
-  onSelect,
   as,
   children,
   placeholder,
   ...props
 }) => {
-  const selectItems = groups.map(({ items, groupName }) => ({
-    label: groupName,
-    items: flattenItems(items as Array<SidebarItemType>).map(
-      ({ label, link }) => ({ value: link, label })
-    ),
-  }));
-
-  const currentItem = selectItems
-    .flatMap(item => item.items)
-    .find(item => pathname === item.value);
+  const currentItem = findActiveItem(
+    groups.flatMap(({ items }) => items),
+    pathname
+  );
 
   return (
     <aside {...props} className={styles.wrapper}>
       {children}
 
-      {selectItems.length > 0 && (
-        <WithNoScriptSelect
-          label={title}
-          values={selectItems}
-          defaultValue={currentItem?.value}
-          placeholder={placeholder}
-          onChange={onSelect}
-          className={styles.mobileSelect}
-          as={as}
-        />
-      )}
-
-      {groups.map(({ groupName, items }) => (
-        <SidebarGroup
-          key={groupName.toString()}
-          groupName={groupName}
-          items={items}
-          pathname={pathname}
-          as={as}
+      {groups.length > 0 && (
+        // On mobile, the navigation collapses behind a disclosure. On larger
+        // screens, the disclosure is always expanded and its summary hidden.
+        <SidebarCollapsible
+          summary={currentItem?.label ?? placeholder ?? title}
           className={styles.navigation}
-        />
-      ))}
+        >
+          <div className={styles.groups}>
+            {groups.map(({ groupName, items }) => (
+              <SidebarGroup
+                key={groupName.toString()}
+                groupName={groupName}
+                items={items}
+                pathname={pathname}
+                as={as}
+              />
+            ))}
+          </div>
+        </SidebarCollapsible>
+      )}
     </aside>
   );
 };
