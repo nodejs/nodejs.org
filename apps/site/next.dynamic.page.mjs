@@ -12,7 +12,6 @@ import { setClientContext } from '#site/client-context';
 import Layout from '#site/components/Layout';
 import { PAGE_VIEWPORT } from '#site/next.dynamic.constants.mjs';
 import { dynamicRouter } from '#site/next.dynamic.mjs';
-import { MatterProvider } from '#site/providers/matterProvider';
 
 /**
  * This is the default Viewport Metadata
@@ -112,16 +111,9 @@ export const getMarkdownContext = async props => {
  * @returns {import('react').ReactElement}
  */
 export const renderPage = props => {
-  // Defines a shared Server Context for the Client-Side
-  // That is shared for all pages under the dynamic router
+  // Defines the shared Server Context of the page (frontmatter, pathname,
+  // headings, ...) that the layouts and their components read while rendering
   setClientContext(props.context);
 
-  // The Matter Provider allows Client-Side injection of the data
-  // to a shared React Client Provider even though the page is rendered
-  // within a server-side context
-  return (
-    <MatterProvider {...props.context}>
-      <Layout layout={props.layout}>{props.content}</Layout>
-    </MatterProvider>
-  );
+  return <Layout layout={props.layout}>{props.content}</Layout>;
 };

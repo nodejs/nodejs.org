@@ -4,7 +4,7 @@ import Select from '@node-core/ui-components/Common/Select';
 import { useTranslations } from 'next-intl';
 import { useEffect, use, useMemo, useState } from 'react';
 
-import useClientContext from '#site/hooks/useClientContext';
+import useDetectOS from '#site/hooks/useDetectOS';
 import { ReleaseContext } from '#site/providers/releaseProvider';
 import { PLATFORMS, nextItem, parseCompat } from '#site/util/download';
 import { getUserPlatform } from '#site/util/userAgent';
@@ -13,7 +13,7 @@ import type { Platform } from '#site/types/userAgent';
 import type { FC } from 'react';
 
 const PlatformDropdown: FC = () => {
-  const { architecture, bitness } = useClientContext();
+  const { architecture, bitness } = useDetectOS();
 
   const release = use(ReleaseContext);
 
@@ -37,7 +37,7 @@ const PlatformDropdown: FC = () => {
         release.setPlatform(currentPlatform);
       }
     },
-    // Only react on the change of the Client Context Architecture and Bitness
+    // Only react on the change of the detected Architecture and Bitness
     // eslint-disable-next-line @eslint-react/exhaustive-deps
     [architecture, bitness]
   );

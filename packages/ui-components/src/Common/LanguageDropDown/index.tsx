@@ -3,19 +3,26 @@ import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import classNames from 'classnames';
 
 import type { SimpleLocaleConfig } from '#ui/types';
-import type { FC } from 'react';
+import type { AnchorHTMLAttributes, FC, JSXElementConstructor } from 'react';
 
 import styles from './index.module.css';
 
+// A link that renders `href` in the given `locale`, as the `Link` of i18n routers
+type LocaleLinkLike = JSXElementConstructor<
+  AnchorHTMLAttributes<HTMLAnchorElement> & { locale: string }
+>;
+
 type LanguageDropDownProps = {
-  onChange?: (newLocale: SimpleLocaleConfig) => void;
+  href: string;
+  as: LocaleLinkLike;
   currentLanguage: string;
   availableLanguages: Array<SimpleLocaleConfig>;
   ariaLabel: string;
 };
 
 const LanguageDropdown: FC<LanguageDropDownProps> = ({
-  onChange = () => {},
+  href,
+  as: Component,
   currentLanguage,
   availableLanguages,
   ariaLabel,
@@ -36,17 +43,20 @@ const LanguageDropdown: FC<LanguageDropDownProps> = ({
         >
           <div>
             {availableLanguages.map(({ name, code, localName, hrefLang }) => (
-              <DropdownMenu.Item
-                key={code}
-                aria-label={name}
-                onClick={() => onChange({ name, code, localName, hrefLang })}
-                className={classNames(styles.dropDownItem, {
-                  [styles.currentDropDown]: code === currentLanguage,
-                })}
-              >
-                <span lang={hrefLang} aria-hidden="true">
-                  {localName}
-                </span>
+              <DropdownMenu.Item key={code} asChild>
+                <Component
+                  href={href}
+                  locale={code}
+                  hrefLang={hrefLang}
+                  aria-label={name}
+                  className={classNames(styles.dropDownItem, {
+                    [styles.currentDropDown]: code === currentLanguage,
+                  })}
+                >
+                  <span lang={hrefLang} aria-hidden="true">
+                    {localName}
+                  </span>
+                </Component>
               </DropdownMenu.Item>
             ))}
           </div>

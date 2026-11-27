@@ -30,6 +30,14 @@
     @apply hidden;
   }
 
+  &.hiddenOnMobile {
+    @apply max-sm:hidden;
+  }
+
+  &.mobileOnly {
+    @apply sm:hidden;
+  }
+
   .separator {
     @apply size-4
       max-w-fit

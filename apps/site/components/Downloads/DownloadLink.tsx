@@ -1,7 +1,5 @@
-import { getClientContext } from '#site/client-context';
 import LinkWithArrow from '#site/components/Common/LinkWithArrow';
 import { getNodeDownloadUrl } from '#site/util/url';
-import { getUserPlatform } from '#site/util/userAgent';
 
 import type { DownloadKind, NodeRelease } from '#site/types';
 import type { FC, PropsWithChildren } from 'react';
@@ -13,16 +11,7 @@ const DownloadLink: FC<PropsWithChildren<DownloadLinkProps>> = ({
   kind = 'installer',
   children,
 }) => {
-  const { os, bitness, architecture } = getClientContext();
-
-  const platform = getUserPlatform(architecture, bitness);
-
-  const downloadLink = getNodeDownloadUrl({
-    versionWithPrefix,
-    os,
-    platform,
-    kind,
-  });
+  const downloadLink = getNodeDownloadUrl({ versionWithPrefix, kind });
 
   return <LinkWithArrow href={downloadLink}>{children}</LinkWithArrow>;
 };
