@@ -1,0 +1,44 @@
+# Security Notes
+# Only selected Actions are allowed within this repository. Please refer to (https://github.com/nodejs/nodejs.org/settings/actions)
+# for the full list of available actions. If you want to add a new one, please reach out a maintainer with Admin permissions.
+# REVIEWERS, please always double-check security practices before merging a PR that contains Workflow changes!!
+# AUTHORS, please only use actions with explicit SHA references, and avoid using `@master` or `@main` references or `@version` tags.
+
+name: Stale Pull Requests
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *' # daily at 00:00 UTC
+
+permissions: {}
+
+jobs:
+  stale:
+    name: Mark and Close Stale Pull Requests
+    runs-on: ubuntu-latest
+    if: github.repository_owner == 'nodejs'
+    permissions:
+      # Required by `actions/stale` to persist its state between runs
+      actions: write
+      # Required by `actions/stale` to label, comment on, and close pull requests
+      pull-requests: write
+    steps:
+      - name: Harden Runner
+        uses: step-security/harden-runner@dc2769abcc0fcfbadfc1df54081c1608579ef6b2 # v2.22.2
+        with:
+          egress-policy: audit
+
+      - name: Mark and Close Stale Pull Requests
+        uses: actions/stale@4391f3da665fdf50b6810c1a66712fb9ba21aa93 # v11.0.0
+        with:
+          days-before-issue-stale: -1
+          days-before-issue-close: -1
+          days-before-pr-stale: 14
+          days-before-pr-close: 7
+          stale-pr-message: >
+            This pull request has had no activity for 2 weeks and has been marked as stale.
+            It will be closed in 1 week unless there is further activity.
+          close-pr-message: >
+            This pull request was closed because it has been stale for 1 week with no activity.
+            Feel free to reopen it if you'd like to continue working on it.
