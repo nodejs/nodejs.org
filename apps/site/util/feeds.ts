@@ -51,6 +51,7 @@ export const generateWebsiteFeeds = ({ posts }: BlogPostsRSC) => {
               time > guidTimestampStartDate
                 ? `${post.slug}?${date.getTime()}`
                 : post.slug,
+            author: [{ name: post.author }],
           };
         });
 
