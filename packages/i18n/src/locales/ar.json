@@ -25,7 +25,8 @@
         },
         "releasePills": {
           "latestLTS": "أحدث LTS",
-          "latestRelease": "أحدث إصدار"
+          "latestRelease": "أحدث إصدار",
+          "latestAlpha": "أحدث إصدار Alpha"
         }
       },
       "navBar": {

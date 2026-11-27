@@ -2,7 +2,7 @@ import { readdir } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
-import createNodeSlugger from '@node-core/doc-kit/src/generators/metadata/utils/slugger.mjs';
+import createNodeSlugger from '@doc-kit/core/src/generators/metadata/utils/slugger.mjs';
 import { toString } from 'mdast-util-to-string';
 import { lintRule } from 'unified-lint-rule';
 import { visit } from 'unist-util-visit';

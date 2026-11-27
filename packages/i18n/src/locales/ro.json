@@ -25,7 +25,8 @@
         },
         "releasePills": {
           "latestLTS": "Ultima versiune LTS",
-          "latestRelease": "Ultima lansare"
+          "latestRelease": "Ultima lansare",
+          "latestAlpha": "Ultima versiune alfa"
         }
       },
       "navBar": {

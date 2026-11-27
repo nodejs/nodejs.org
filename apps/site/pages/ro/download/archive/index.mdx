@@ -25,18 +25,18 @@ layout: download-archive
 
       <ul className='flex list-none flex-col gap-2 p-0 text-sm'>
         <li>
-          Citește <LinkWithArrow href={`https://github.com/nodejs/node/releases/tag/${version}`}>jurnalul de modificări</LinkWithArrow> sau <Link href={`/blog/release/${version}`}>articolul din bloc</Link> pentru această versiune.
+          Reîncarcă <LinkWithArrow href={`https://github.com/nodejs/node/releases/tag/${version}`}>jurnalul de modificări</LinkWithArrow> sau <Link href={`/blog/release/${version}`}>articolul din blog</Link> pentru această versiune.
         </li>
         <li>
-          Află mai multe despre <Link href="/about/previous-releases">lansările Node.js</Link>, inclusiv despre programul de lansare și starea LTS.
-        </li>
-
-        <li>
-          <LinkWithArrow href={sources.shasum}>SHASUM-uri semnate</LinkWithArrow> pentru fișierele de lansare. Cum să <LinkWithArrow href="https://github.com/nodejs/node#verifying-binaries">verifici</LinkWithArrow> SHASUM-urile semnate.
+          Află mai multe despre <Link href="/about/previous-releases">lansările Node.js</Link>, inclusiv despre programul de lansare și stările LTS.
         </li>
 
         <li>
-          Descarcă un tarball semnat pentru <LinkWithArrow href={sources.tarball}>sursa Node.js {version}</LinkWithArrow> tarball.
+          <LinkWithArrow href={sources.shasum}>Fișiere SHASUM semnate</LinkWithArrow> pentru fișierele de lansare. Cum se <LinkWithArrow href="https://github.com/nodejs/node#verifying-binaries">verifică</LinkWithArrow> fișierele SHASUM semnate.
+        </li>
+
+        <li>
+          Descarcă <LinkWithArrow href={sources.tarball}>o sursă  tarball Node.js {version}</LinkWithArrow> semnată.
         </li>
 
       </ul>
@@ -47,7 +47,7 @@ layout: download-archive
       <h2>Descărcări binare</h2>
       <DownloadsTable source={binaries} />
 
-      <h2>Packete pentru instalatori</h2>
+      <h2>Pachete de instalare</h2>
       <DownloadsTable source={installers} />
 
       <h2>Versiuni minore</h2>

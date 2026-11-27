@@ -25,7 +25,8 @@
         },
         "releasePills": {
           "latestLTS": "LTS版",
-          "latestRelease": "最新版"
+          "latestRelease": "最新版",
+          "latestAlpha": "最新のアルファ版"
         }
       },
       "navBar": {
@@ -255,6 +256,7 @@
         "platformInfo": {
           "default": "{platform}とそのインストールスクリプトはNode.jsプロジェクトによって管理されていません。",
           "nvm": "\"nvm\"はクロスプラットフォームに対応したNode.jsのバージョンマネージャーです。",
+          "nvmWindows": "\"nvm-windows\"はWindows専用のNode.jsバージョン管理ツールです。",
           "fnm": "\"fnm\"はクロスプラットフォームに対応したNode.jsのバージョンマネージャーです。",
           "brew": "HomebrewはmacOS用およびLinux用のパッケージマネージャーです。",
           "choco": "ChocolateyはWIndows用のパッケージマネージャーです。",

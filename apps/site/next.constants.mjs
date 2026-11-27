@@ -149,6 +149,18 @@ export const STATUS_KIND_MAP = {
 };
 
 /**
+ * The download route on which each release status is presented
+ *
+ * @type {Record<import('./types/releases').NodeReleaseStatus, string>}
+ */
+export const STATUS_ROUTE_MAP = {
+  EOL: '/download',
+  LTS: '/download',
+  Current: '/download/current',
+  Alpha: '/download/alpha',
+};
+
+/**
  * The location of the Node.js Security Working Group Vulnerabilities data.
  */
 export const VULNERABILITIES_URL =
@@ -172,3 +184,14 @@ export const ORAMA_DB_URLS = {
   [LEARN_URL.slice(0, -1)]: 'https://nodejs.org/learn/orama-db.json',
   [`${DOCS_URL}latest/api`]: 'https://beta.docs.nodejs.org/orama-db.json',
 };
+
+/**
+ * The Carbon Ads JSON API endpoint (suffixed with `{zone}.json`)
+ */
+export const CARBON_ADS_URL = 'https://srv.carbonads.net/ads/';
+
+/**
+ * Whether Carbon Ads should count impressions (production only)
+ */
+export const CARBON_ADS_COUNT_IMPRESSIONS =
+  process.env.NEXT_PUBLIC_CARBON_ADS_PRODUCTION === 'true';

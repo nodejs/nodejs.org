@@ -111,7 +111,7 @@ describe('validate-links', () => {
         '# Existing heading',
         '[Existing](#existing%2Dheading)',
         '# child_process',
-        '[Node.js-style slug](#child-process)',
+        '[Node.js-style slug](#child_process)',
       ].join('\n\n')
     );
     const invalid = await processMarkdown(

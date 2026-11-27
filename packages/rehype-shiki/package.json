@@ -31,15 +31,15 @@
     "test:unit": "cross-env NODE_NO_WARNINGS=1 node --experimental-test-coverage --experimental-test-module-mocks --test \"**/*.test.mjs\""
   },
   "dependencies": {
-    "@shikijs/core": "^4.4.3",
-    "@shikijs/engine-javascript": "^4.4.3",
-    "@shikijs/engine-oniguruma": "^4.4.3",
-    "@shikijs/twoslash": "^4.4.3",
+    "@shikijs/core": "^4.5.0",
+    "@shikijs/engine-javascript": "^4.5.0",
+    "@shikijs/engine-oniguruma": "^4.5.0",
+    "@shikijs/twoslash": "^4.5.0",
     "classnames": "catalog:",
     "hast-util-to-string": "^3.0.1",
-    "shiki": "~4.4.3",
+    "shiki": "~4.5.0",
     "typescript": "catalog:",
-    "unist-util-visit": "^5.1.0"
+    "unist-util-visit": "^5.2.0"
   },
   "devDependencies": {
     "cross-env": "catalog:"
