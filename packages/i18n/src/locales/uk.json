@@ -256,6 +256,7 @@
         "platformInfo": {
           "default": "{platform} та його скрипти установки не супроводжуються проєктом Node.js.",
           "nvm": "«nvm» — це кросплатформний менеджер версій Node.js.",
+          "nvmWindows": "«nvm-windows» — це менеджер версій Node.js, створений для Windows.",
           "fnm": "«fnm» — це кросплатформний менеджер версій Node.js.",
           "brew": "Homebrew — це менеджер пакетів для macOS та Linux.",
           "choco": "Chocolatey — це менеджер пакетів для Windows.",
