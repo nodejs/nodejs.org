@@ -15,6 +15,7 @@ import {
   ReleasesContext,
 } from '#site/providers/releaseProvider';
 import { INSTALL_METHODS } from '#site/util/download';
+import { stripShellComments } from '#site/util/download/snippet';
 import createInterpreter from '#site/util/interpreter';
 
 import type { DownloadSnippet } from '#site/types/download';
@@ -56,7 +57,7 @@ const useSnippetProcessor = (
 
     // Only process if both snippets are available
     if (!installMethodSnippet || !packageManagerSnippet) {
-      return '';
+      return { html: '', copyText: '' };
     }
 
     const verifyNodeSnippet = snippets.find(({ name }) => name === 'node');
@@ -84,10 +85,13 @@ const useSnippetProcessor = (
 
     // Convert to HTML using Shiki's highlighter
     // This is faster than JSX rendering as it avoids React runtime overhead
-    return highlightToHtml(
-      parsedContent,
-      context.os === 'WIN' ? 'ps1' : 'bash'
-    );
+    return {
+      html: highlightToHtml(
+        parsedContent,
+        context.os === 'WIN' ? 'ps1' : 'bash'
+      ),
+      copyText: stripShellComments(parsedContent),
+    };
   }, [snippets, context]);
 };
 
@@ -123,7 +127,10 @@ const ReleaseCodeBox: FC = () => {
   const platformInfo = usePlatformInfo(context.installMethod);
 
   // Process snippets
-  const parsedSnippets = useSnippetProcessor(snippets, context);
+  const { html: parsedSnippets, copyText } = useSnippetProcessor(
+    snippets,
+    context
+  );
 
   // UI state calculations
   const displayLanguage = context.os === 'WIN' ? 'PowerShell' : 'Bash';
@@ -164,7 +171,11 @@ const ReleaseCodeBox: FC = () => {
 
       {/* Code display with skeleton loading */}
       <Skeleton loading={isLoading}>
-        <CodeBox language={displayLanguage} className="min-h-[19rem]">
+        <CodeBox
+          language={displayLanguage}
+          copyText={copyText}
+          className="min-h-[19rem]"
+        >
           {/* eslint-disable-next-line @eslint-react/dom-no-dangerously-set-innerhtml */}
           <code dangerouslySetInnerHTML={{ __html: parsedSnippets }} />
         </CodeBox>
