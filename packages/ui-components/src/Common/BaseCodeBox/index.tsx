@@ -72,6 +72,7 @@ type CodeBoxProps = {
   as?: LinkLike;
   copyButtonLabel: ReactNode;
   copiedButtonLabel: ReactNode;
+  copyText?: string;
 };
 
 const BaseCodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
@@ -80,13 +81,14 @@ const BaseCodeBox: FC<PropsWithChildren<CodeBoxProps>> = ({
   className,
   copyButtonLabel,
   copiedButtonLabel,
+  copyText,
   as = 'a',
 }: PropsWithChildren<CodeBoxProps>) => {
   const [copied, copy] = useCopy();
 
   const containerRef = useRef<HTMLPreElement>(null);
 
-  const handleCopy = () => copy(containerRef.current?.textContent);
+  const handleCopy = () => copy(copyText ?? containerRef.current?.textContent);
 
   const ButtonIcon = copied ? DocumentDuplicateIcon : CodeBracketIcon;
 

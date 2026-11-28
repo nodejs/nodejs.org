@@ -10,6 +10,7 @@ import type { FC, PropsWithChildren } from 'react';
 type CodeBoxProps = {
   language: string;
   className?: string;
+  copyText?: string;
 };
 
 const CodeBox: FC<PropsWithChildren<CodeBoxProps>> = props => {
