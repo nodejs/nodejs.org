@@ -1,5 +1,5 @@
 # Get 0install:
-${props.os === 'WIN' ? 'winget install 0install' : 'curl -O https://get.0install.net/0install.sh && chmod +x 0install.sh\n./0install.sh\nexport PATH=$HOME/bin:$PATH'}
+${props.os === 'WIN' ? 'winget install 0install' : 'curl -O https://get.0install.net/0install.sh && chmod +x 0install.sh\n./0install.sh install home\nexport PATH=$HOME/bin:$PATH'}
 
 # Add Node.js and npm to PATH:
 0install add node https://apps.0install.net/javascript/node.xml --version=${props.release.version}
